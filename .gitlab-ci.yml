@@ -1,0 +1,28 @@
+stages:
+  - dependencies
+  - build
+  - package
+  - deploy
+
+.build_on: &build_on
+  - dev
+  - master
+
+.build_on_ci: &build_on_ci
+  - ci
+
+# variables:
+#   DOCKER_DRIVER: overlay
+
+install_dependencies:
+  # when: manual
+  image: node:10-alpine
+  only: *build_on
+  stage: dependencies
+  artifacts:
+    paths:
+      - node_modules/
+      - Dockerfile
+  script:
+    # Install all deps
+    - yarn install
