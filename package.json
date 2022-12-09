@@ -9,7 +9,7 @@
   "author": "Andrei Haiducu",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "node-qr-image": "^0.0.1"
   }
 }
